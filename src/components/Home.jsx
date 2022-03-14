@@ -6,7 +6,7 @@ function Home() {
   return (
     <div>
       <p>
-        Welcome Home!
+        See the Ratings!
       </p>
     </div>
   )
