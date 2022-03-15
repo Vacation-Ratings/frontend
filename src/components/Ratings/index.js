@@ -47,7 +47,7 @@ const getStar = (star, size, index) => {
     const StarRating = ({rating, size}) => {
       if (!rating) return null;
       return (
-        <View style={styles.container}>
+        <View style={style.container}>
           {getStars(rating).map((star, index) => getStar(star, size, index))}
         </View>
       )
