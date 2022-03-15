@@ -1,5 +1,3 @@
-
-
 function Favorites() {
   return (
     <div>
