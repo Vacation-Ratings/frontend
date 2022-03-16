@@ -1,11 +1,11 @@
 import axios from 'axios';
-import { useState, useEffect } from "react";
-import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { useState, useEffect } from "react";
+import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 // import Box from '@mui/material/Box';
 
-const SERVER_URL = process.env.REACT_APP_SERVER_URL;
+const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 function Reviews() {
 
