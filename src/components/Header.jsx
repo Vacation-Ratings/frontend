@@ -1,4 +1,3 @@
-import Button from '@mui/material/Button';
 import '../css/Header.css';
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
@@ -8,11 +7,6 @@ function Header() {
   const { isAuthenticated } = useAuth0();
   return (
     <div>
-      {isAuthenticated ? (
-        <a className="navLink" href="/favorites">
-          Favorites
-        </a>
-      ) : null}
       <a className="navLink" href="/search">
         Search
       </a>
