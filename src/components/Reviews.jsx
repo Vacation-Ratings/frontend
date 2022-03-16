@@ -73,7 +73,7 @@ function Reviews() {
           swipeable
         >
           {
-            reviews.slice(0, 5).map((review, idx) => (
+            reviews.slice(0, 4).map((review, idx) => (
               <div key={idx}>
                 <Card sx={{ minWidth: 275 }}>
                   <CardContent>
@@ -88,7 +88,7 @@ function Reviews() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small">Learn More</Button>
+                    <Button size="small" href={`/search?city=${review.location}`}>Learn More</Button>
                   </CardActions>
                 </Card>
               </div>
