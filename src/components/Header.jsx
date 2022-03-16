@@ -1,41 +1,34 @@
 import Button from '@mui/material/Button';
-import { useDispatch, useSelector } from 'react-redux';
-import { changeTheme } from '../store/themeSlice.js';
-import { changeAuth } from '../store/authSlice.js';
 import '../css/Header.css';
-
+import LoginButton from './LoginButton';
+import LogoutButton from './LogoutButton';
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Header() {
-  let dispatch = useDispatch();
-  let theme = useSelector(state => state.theme);
-  let auth = useSelector(state => state.auth);
-  console.log(auth.isAuth);
-
-  const handleSignIn = () => {
-    dispatch(changeAuth())
-  }
-
-  const themeToggle = () => {
-    dispatch(changeTheme())
-  }
-
+  const { isAuthenticated } = useAuth0();
   return (
     <div>
-      {
-        auth.isAuth === true ? (
-        <a className={ theme.theme === 'light' ? 'navLink light' : 'navLink dark' } href="/favorites">
+      {isAuthenticated ? (
+        <a className="navLink" href="/favorites">
           Favorites
         </a>
-        ) : null
-      }
-      <a className={ theme.theme === 'light' ? 'navLink light' : 'navLink dark' } href="/search">
+      ) : null}
+      <a className="navLink" href="/search">
         Search
       </a>
-      <a className={ theme.theme === 'light' ? 'siteTitle light' : 'siteTitle dark' } href="/">
+      <a className="siteTitle" href="/">
         Vacation Ratings
       </a>
-      <Button onClick={themeToggle} variant="outlined">{theme.theme === 'light' ? 'Dark' : 'Light'} </Button>
-      <Button onClick={handleSignIn} variant="outlined">Log In</Button>
+      {isAuthenticated ? (
+        <a className="navLink" href="/addreview">
+          Add a Review
+        </a>
+      ) : null}
+      {isAuthenticated ? (
+        <LogoutButton />
+      ) : (
+        <LoginButton />
+      )}
     </div>
   )
 }
