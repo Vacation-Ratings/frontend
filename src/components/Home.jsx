@@ -1,13 +1,11 @@
-import { useDispatch, useSelector } from 'react-redux';
-
+// import { useDispatch, useSelector } from 'react-redux';
+import Reviews from './Reviews.jsx';
 
 function Home() {
-  let auth = useSelector(state => state.auth);
+  // let auth = useSelector(state => state.auth);
   return (
     <div>
-      <p>
-        See the Ratings!
-      </p>
+      <Reviews />
     </div>
   )
 }

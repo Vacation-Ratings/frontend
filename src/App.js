@@ -1,18 +1,19 @@
 import './App.css';
 import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import store from './store/index.js';
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
+import StarRating from '../src/components/Ratings/index.js'
 
 import Home from './components/Home.jsx';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import Search from './components/Search.jsx';
-import Favorites from './components/Favorites';
-
+import Favorites from './components/Favorites.jsx';
 
 function App() {
   return (
