@@ -7,6 +7,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import StarRating from '../src/components/Ratings/index.js'
 
 import Home from './components/Home.jsx';
 import Header from './components/Header.jsx';
