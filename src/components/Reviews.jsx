@@ -1,16 +1,15 @@
 import axios from 'axios';
 import { useState, useEffect } from "react";
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
+
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-// import Box from '@mui/material/Box';
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 function Reviews() {
 
   const [reviews, setReviews] = useState([]);
-  // const [review, setReview] = useState('');
 
   useEffect(() => {
     getReviews();
@@ -18,19 +17,13 @@ function Reviews() {
 
   async function getReviews() {
     let serverURL = `${SERVER_URL}/vacation`;
-    // if (this.props.user) {
-    //   console.log(this.props.user);
-    //   serverURL = `${process.env.REACT_APP_SERVER_URL}/vacation?user=${this.props.user}`
-    // }
     let gottenReviews = await axios.get(serverURL);
-    // MIGHT need to check if this result is an array
     setReviews(gottenReviews.data);
   };
 
   return (
     <>
       <h2>Trip Reviews &amp; Trip Images</h2>
-      <Button onClick={ () => this.showModal() }>Add a Review</Button>
       {reviews.length > 0 ? (
         <Carousel
           additionalTransfrom={0}
@@ -54,26 +47,26 @@ function Reviews() {
                 max: 3000,
                 min: 1024
               },
-                items: 3,
-                partialVisibilityGutter: 40
+              items: 3,
+              partialVisibilityGutter: 40
+            },
+            mobile: {
+              breakpoint: {
+                max: 464,
+                min: 0
               },
-              mobile: {
-                breakpoint: {
-                  max: 464,
-                  min: 0
-                },
-                items: 1,
-                partialVisibilityGutter: 30
+              items: 1,
+              partialVisibilityGutter: 30
+            },
+            tablet: {
+              breakpoint: {
+                max: 1024,
+                min: 464
               },
-              tablet: {
-                breakpoint: {
-                  max: 1024,
-                  min: 464
-                },
-                items: 2,
-                partialVisibilityGutter: 30
-              }
-            }}
+              items: 2,
+              partialVisibilityGutter: 30
+            }
+          }}
           showDots={false}
           sliderClass=""
           slidesToSlide={1}
@@ -91,7 +84,7 @@ function Reviews() {
                       alt="green iguana"
                     />
                     <Typography gutterBottom variant="h5" component="div">
-                      { review.location }, { review.country } 
+                      {review.location}, {review.country}
                     </Typography>
                   </CardContent>
                   <CardActions>
@@ -110,9 +103,3 @@ function Reviews() {
 };
 
 export default Reviews;
-
-{/* <a
-description="React Carousel with Server Side Rendering Support – Part 1"
-headline="w3js.com - web front-end studio"
-image="https://images.unsplash.com/photo-1549985908-597a09ef0a7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-/> */}
