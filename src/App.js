@@ -9,7 +9,6 @@ import Home from './components/Home.jsx';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import Search from './components/Search.jsx';
-import Favorites from './components/Favorites.jsx';
 import AddReview from './components/AddReview.jsx';
 // import StarRating from '../src/components/Ratings/index.js'
 
@@ -21,7 +20,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
-          <Route path="/favorites" element={<Favorites />} />
           <Route path="/addreview" element={<AddReview />} />
         </Routes>
       </BrowserRouter>

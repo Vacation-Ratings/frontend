@@ -1,6 +1,8 @@
+import '../css/Footer.css';
+
 function Footer() {
   return (
-    <div>
+    <div className="footer">
       <h6>
         &copy; Vacation Ratings Inc.
       </h6>

@@ -23,7 +23,9 @@ function Reviews() {
 
   return (
     <>
-      <h2>Trip Reviews &amp; Trip Images</h2>
+      <div>
+        <h2>Trip Reviews &amp; Trip Images</h2>
+      </div>
       {reviews.length > 0 ? (
         <Carousel
           additionalTransfrom={0}
@@ -75,11 +77,15 @@ function Reviews() {
           {
             reviews.slice(0, 4).map((review, idx) => (
               <div key={idx}>
-                <Card sx={{ minWidth: 275 }}>
+                <Card sx={{
+                  minWidth: 275,
+                  marginTop: 20,
+                  height: '25em'
+                }}>
                   <CardContent>
                     <CardMedia
                       component="img"
-                      height="140"
+                      height="250"
                       image="https://storyblok-image.ef.com/unsafe/750x375/filters:focal(329x215:330x216):quality(90)/f/86150/750x425/7544f7e619/living-in-tropics.jpg"
                       alt="green iguana"
                     />
@@ -96,7 +102,7 @@ function Reviews() {
           }
         </Carousel>
       ) : (
-        <p>Check later for places to visit</p>
+        <p>Servers are down!!! 😱</p>
       )}
     </>
   );
