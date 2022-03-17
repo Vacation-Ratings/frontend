@@ -2,8 +2,6 @@ import { useState } from 'react';
 import { getDownloadURL, ref, uploadBytesResumable } from '@firebase/storage';
 import { storage } from './firebase.js';
 
-// npm install firebase
-
 function Upload(props) {
 
   const [progress, setProgress] = useState(0);
@@ -23,12 +21,12 @@ function Upload(props) {
       const prog = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
       setProgress(prog);
     }, (err) => console.log(err),
-    () => {
-      getDownloadURL(uploadTask.snapshot.ref)
-      .then(url => {
-        props.setImageUrl(url)
-      })
-    }
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref)
+          .then(url => {
+            props.setImageUrl(url)
+          })
+      }
     );
   }
 
