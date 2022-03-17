@@ -86,7 +86,7 @@ function Reviews() {
                     <CardMedia
                       component="img"
                       height="250"
-                      image="https://storyblok-image.ef.com/unsafe/750x375/filters:focal(329x215:330x216):quality(90)/f/86150/750x425/7544f7e619/living-in-tropics.jpg"
+                      image={review.imageUrl}
                       alt="green iguana"
                     />
                     <Typography gutterBottom variant="h5" component="div">
