@@ -6,6 +6,7 @@ import TextField from '@mui/material/TextField';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 import { useAuth0 } from "@auth0/auth0-react";
 import StarRating from './Ratings/index.jsx';
+import Upload from './uploadImage.js';
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
@@ -19,6 +20,7 @@ function AddReview() {
     const [country, setCountry] = useState('');
     const [review, setReview] = useState('');
     const [rating, setRating] = useState(0);
+    const [imageUrl, setImageUrl] = useState(null);
 
     const handleChange = (e) => {
         switch (e.target.id) {
@@ -54,7 +56,8 @@ function AddReview() {
                 duration: duration,
                 rating: rating,
                 expences: expenses,
-                username: user.name
+                username: user.name,
+                imageUrl: imageUrl
             }
         });
     }
@@ -124,9 +127,10 @@ function AddReview() {
                     </div>
                     <StarRating setRating={setRating} rating={rating} />
                     {/* Add image input here */}
-                    <Button onClick={handleSubmit} variant="outlined" href="/" >Submit</Button>
                 </div>
             </Box>
+            <Upload imageUrl={imageUrl} setImageUrl={setImageUrl}/>
+                    <Button onClick={handleSubmit} variant="outlined" href='/' >Submit</Button>
         </div>
     );
 }

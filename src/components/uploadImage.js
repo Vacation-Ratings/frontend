@@ -4,13 +4,13 @@ import { storage } from './firebase.js';
 
 // npm install firebase
 
-function Upload() {
+function Upload(props) {
 
-  const [progress, setProgress] = useState(0)
+  const [progress, setProgress] = useState(0);
 
   const imageHandler = (e) => {
     e.preventDefault();
-    const image = e.target[0].file[0];
+    const image = e.target[0].files[0];
     uploadImages(image);
   };
 
@@ -25,7 +25,9 @@ function Upload() {
     }, (err) => console.log(err),
     () => {
       getDownloadURL(uploadTask.snapshot.ref)
-      .then(url => console.log(url))
+      .then(url => {
+        props.setImageUrl(url)
+      })
     }
     );
   }
@@ -37,6 +39,7 @@ function Upload() {
         <button type='submit'>Upload</button>
       </form>
       <h4>Uploaded {progress} %</h4>
+      <img src={props.imageUrl} alt={props.imageUrl} />
     </div>
   )
 }
