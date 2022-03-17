@@ -4,7 +4,7 @@ v 1.0.0
 
 ### Deployed on-
 
-[Netlify:](netlify site) ***Site goes Here***
+[Netlify:](https://vacation-ratings.netlify.app/)
 ![Vacation Ratings](./assests/option1d.jpg)
 
 ### Web Application-
@@ -30,9 +30,15 @@ Provides a site where people can easily see reviews for a specific location alon
 
 To visit and use the site, simply follow the link above. (Found in Deployed on: section)
 
+On local machine use: `git clone git@github.com:Vacation-Ratings/frontend.git`
+
+Then run: `npm install`
+
 ### Usage-
 
 As a User, you will be able search for locations of previous reviews left by other Users. Once the User signs in, using Auth0, they will additionally be able to leave a detailed review of a location they have stayed at and include details of expeneses, duration of their stay, an image, and a star rating of 1-5 stars.
+
+![screenshot](./assests/Screenshot%20(616).png)
 
 ### Data Flow (Frontend, Backend, MongoDB)-
 
