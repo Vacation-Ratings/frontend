@@ -63,7 +63,11 @@ function Search() {
                 </Typography>
                 <Typography gutterBottom variant="h5" component="div">
                   {/* Convert back to stars for display (stretch goal) */}
-                  {review.rating} / 5
+                  {[...Array(review.rating)].map((_, index) => {
+                    return (
+                      <span className="star">&#9733;</span>
+                    );
+                  })}
                 </Typography>
                 {review.duration ? (
                   <Typography gutterBottom variant="h5" component="div">
