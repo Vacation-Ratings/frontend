@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from "react";
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
-
+import ProjLogo from './images/ProjLogo.jpg';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
@@ -24,7 +24,7 @@ function Reviews() {
   return (
     <>
       <div>
-        <h2>Trip Reviews &amp; Trip Images</h2>
+        <h2>Some reviews...</h2>
       </div>
       {reviews.length > 0 ? (
         <Carousel
@@ -86,8 +86,8 @@ function Reviews() {
                     <CardMedia
                       component="img"
                       height="250"
-                      image={review.imageUrl}
-                      alt="green iguana"
+                      image={review.imageUrl ? review.imageUrl : ProjLogo}
+                      alt={review.imageUrl ? review.imageUrl : "ProjectLogo"}
                     />
                     <Typography gutterBottom variant="h5" component="div">
                       {review.location}, {review.country}

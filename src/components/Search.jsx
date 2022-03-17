@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Button, Card, CardContent, CardMedia, Typography } from '@mui/material';
 import '../css/Header.css';
 import TextField from '@mui/material/TextField';
+import ProjLogo from './images/ProjLogo.jpg';
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
@@ -52,8 +53,8 @@ function Search() {
                 <CardMedia
                   component="img"
                   height="300"
-                  image={review.imageUrl}
-                  alt="green iguana"
+                  image={review.imageUrl ? review.imageUrl : ProjLogo}
+                  alt={review.imageUrl ? review.imageUrl : "ProjectLogo"}
                 />
                 <Typography gutterBottom variant="h5" component="div">
                   {review.location}, {review.country}
