@@ -9,7 +9,15 @@ const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 function Search() {
   useEffect(() => {
-    handleSubmit();
+    handleInitialLoad();
+    async function handleInitialLoad() {
+      let result = await axios({
+        method: 'get',
+        baseURL: SERVER_URL,
+        url: '/vacation'
+      });
+      setData(result.data);
+    }
   }, []);
 
   let [query, setQuery] = useState();
