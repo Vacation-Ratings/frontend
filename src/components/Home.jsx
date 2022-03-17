@@ -2,7 +2,7 @@ import Reviews from './Reviews.jsx';
 
 function Home() {
   return (
-    <div>
+    <div data-testid="home">
       <Reviews />
     </div>
   )
