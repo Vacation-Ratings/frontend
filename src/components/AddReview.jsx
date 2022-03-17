@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 import { useAuth0 } from "@auth0/auth0-react";
+import StarRating from './Ratings/index.jsx';
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
@@ -17,7 +18,7 @@ function AddReview() {
     const [city, setCity] = useState('');
     const [country, setCountry] = useState('');
     const [review, setReview] = useState('');
-    const [rating, setRating] = useState(2);
+    const [rating, setRating] = useState(0);
 
     const handleChange = (e) => {
         switch (e.target.id) {
@@ -121,7 +122,7 @@ function AddReview() {
                             variant="standard"
                         />
                     </div>
-                    {/* Add rating here */}
+                    <StarRating setRating={setRating} rating={rating} />
                     {/* Add image input here */}
                     <Button onClick={handleSubmit} variant="outlined" href="/" >Submit</Button>
                 </div>
