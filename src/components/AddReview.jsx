@@ -129,8 +129,8 @@ function AddReview() {
                     {/* Add image input here */}
                 </div>
             </Box>
-            <Upload imageUrl={imageUrl} setImageUrl={setImageUrl}/>
-                    <Button onClick={handleSubmit} variant="outlined" href='/' >Submit</Button>
+            <Upload imageUrl={imageUrl} setImageUrl={setImageUrl} />
+            <Button onClick={handleSubmit} variant="outlined" href='/' >Submit</Button>
         </div>
     );
 }
