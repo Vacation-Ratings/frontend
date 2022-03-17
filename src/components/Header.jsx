@@ -7,14 +7,14 @@ function Header() {
   const { isAuthenticated } = useAuth0();
   return (
     <div>
-      <a className="navLink" href="/search">
+      <a data-testid="navLink1" className="navLink" href="/search">
         Search
       </a>
-      <a className="siteTitle" href="/">
+      <a data-testid="navLink2" className="siteTitle" href="/">
         Vacation Ratings
       </a>
       {isAuthenticated ? (
-        <a className="navLink" href="/addreview">
+        <a data-testid="navLink3" className="navLink" href="/addreview">
           Add a Review
         </a>
       ) : null}

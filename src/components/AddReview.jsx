@@ -78,6 +78,7 @@ function AddReview() {
                         <TextField
                             required
                             onChange={handleChange}
+                            data-testid="city"
                             id="city"
                             label="City"
                             variant="standard"
@@ -87,6 +88,7 @@ function AddReview() {
                         <TextField
                             required
                             onChange={handleChange}
+                            data-testid="country"
                             id="country"
                             label="Country"
                             variant="standard"
@@ -95,6 +97,7 @@ function AddReview() {
                     <div>
                         <TextareaAutosize
                             onChange={handleChange}
+                            data-testid="review"
                             id="review"
                             aria-label="empty textarea"
                             placeholder="Add review"
@@ -104,6 +107,7 @@ function AddReview() {
                     <div>
                         <TextField
                             onChange={handleChange}
+                            data-testid="expenses"
                             id="expenses"
                             label="Expenses"
                             type="number"
@@ -116,6 +120,7 @@ function AddReview() {
                     <div>
                         <TextField
                             onChange={handleChange}
+                            data-testid="duration"
                             id="duration"
                             label="Duration of stay (days)"
                             type="number"
