@@ -46,7 +46,7 @@ function AddReview() {
 
     const handleSubmit = async () => {
         let result = await axios({
-            method: 'POST',
+            method: 'post',
             baseURL: SERVER_URL,
             url: '/vacation',
             data: {
