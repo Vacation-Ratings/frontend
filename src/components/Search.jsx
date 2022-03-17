@@ -47,12 +47,12 @@ function Search() {
       {data.length !== 0 ?
         data.map((review, idx) => (
           <div key={idx}>
-            <Card sx={{ minWidth: 275 }}>
+            <Card sx={{ minWidth: 275, maxWidth: 700, }}>
               <CardContent>
                 <CardMedia
                   component="img"
-                  height="140"
-                  image="https://storyblok-image.ef.com/unsafe/750x375/filters:focal(329x215:330x216):quality(90)/f/86150/750x425/7544f7e619/living-in-tropics.jpg"
+                  height="300"
+                  image={review.imageUrl}
                   alt="green iguana"
                 />
                 <Typography gutterBottom variant="h5" component="div">
