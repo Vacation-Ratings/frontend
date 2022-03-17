@@ -38,6 +38,10 @@ As a User, you will be able search for locations of previous reviews left by oth
 
 The User will hit the home page and see a carousel of images from MongoDB. If they choose to sign in, Auth0 will authenticate them and create an account if not already in the database. They can also simply use the search box, which will query the DB for the requested location, or if nothing queried, all reviews will be displayed. When logged in, user will be able to leave a review by clicking the "add review" button, will display a form to fill out and then send the data to the DB to add to the other data.
 
+### Credits
+
+Machu Picchu [picture](https://commons.wikimedia.org/wiki/File:Machu_Picchu,_Peru.jpg) on review on home page carousel
+
 ### Data Model-
 
 ![UML](./assests/ProjectDF.jpg)
