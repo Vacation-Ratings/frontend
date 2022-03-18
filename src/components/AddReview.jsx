@@ -45,22 +45,27 @@ function AddReview() {
     }
 
     const handleSubmit = async () => {
-        let result = await axios({
-            method: 'post',
-            baseURL: SERVER_URL,
-            url: '/vacation',
-            data: {
-                location: city,
-                country: country,
-                description: review,
-                duration: duration,
-                rating: rating,
-                expences: expenses,
-                username: user.name,
-                imageUrl: imageUrl
-            }
-        });
-        console.log(result);
+        console.log(SERVER_URL);
+        try {
+            let result = await axios({
+                method: 'post',
+                baseURL: SERVER_URL,
+                url: '/vacation',
+                data: {
+                    location: city,
+                    country: country,
+                    description: review,
+                    duration: duration,
+                    rating: rating,
+                    expences: expenses,
+                    username: user.name,
+                    imageUrl: imageUrl
+                }
+            });
+            console.log(result);
+        } catch (e) {
+            console.error(e.message);
+        }
     }
 
     return (
