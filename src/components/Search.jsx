@@ -11,10 +11,17 @@ function Search() {
   useEffect(() => {
     handleInitialLoad();
     async function handleInitialLoad() {
+      let url;
+      if ((window.location.href).split('=')[1] !== undefined) {
+        let temp = (window.location.href).split('=')[1];
+        url = `/vacation/${temp}`;
+      } else {
+        url = '/vacation';
+      }
       let result = await axios({
         method: 'get',
         baseURL: SERVER_URL,
-        url: '/vacation'
+        url: url
       });
       setData(result.data);
     }
