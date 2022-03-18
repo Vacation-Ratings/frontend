@@ -44,10 +44,11 @@ function AddReview() {
         }
     }
 
-    const handleSubmit = async () => {
-        console.log(SERVER_URL);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        // console.log(SERVER_URL);
         try {
-            let result = await axios({
+            await axios({
                 method: 'post',
                 baseURL: SERVER_URL,
                 url: '/vacation',
@@ -62,7 +63,7 @@ function AddReview() {
                     imageUrl: imageUrl
                 }
             });
-            console.log(result);
+            window.location = "/";
         } catch (e) {
             console.error(e.message);
         }
@@ -137,11 +138,10 @@ function AddReview() {
                         />
                     </div>
                     <StarRating setRating={setRating} rating={rating} />
-                    {/* Add image input here */}
                 </div>
             </Box>
             <Upload imageUrl={imageUrl} setImageUrl={setImageUrl} />
-            <Button onClick={handleSubmit} variant="outlined" href='/' >Submit</Button>
+            <Button onClick={handleSubmit} variant="outlined" >Submit</Button>
         </div>
     );
 }
