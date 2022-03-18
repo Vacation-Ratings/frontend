@@ -44,23 +44,29 @@ function AddReview() {
         }
     }
 
-    const handleSubmit = async () => {
-        let result = await axios({
-            method: 'post',
-            baseURL: SERVER_URL,
-            url: '/vacation',
-            data: {
-                location: city,
-                country: country,
-                description: review,
-                duration: duration,
-                rating: rating,
-                expences: expenses,
-                username: user.name,
-                imageUrl: imageUrl
-            }
-        });
-        console.log(result);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        // console.log(SERVER_URL);
+        try {
+            await axios({
+                method: 'post',
+                baseURL: SERVER_URL,
+                url: '/vacation',
+                data: {
+                    location: city,
+                    country: country,
+                    description: review,
+                    duration: duration,
+                    rating: rating,
+                    expences: expenses,
+                    username: user.name,
+                    imageUrl: imageUrl
+                }
+            });
+            window.location = "/";
+        } catch (e) {
+            console.error(e.message);
+        }
     }
 
     return (
@@ -132,11 +138,10 @@ function AddReview() {
                         />
                     </div>
                     <StarRating setRating={setRating} rating={rating} />
-                    {/* Add image input here */}
                 </div>
             </Box>
             <Upload imageUrl={imageUrl} setImageUrl={setImageUrl} />
-            <Button onClick={handleSubmit} variant="outlined" href='/' >Submit</Button>
+            <Button onClick={handleSubmit} variant="outlined" >Submit</Button>
         </div>
     );
 }
